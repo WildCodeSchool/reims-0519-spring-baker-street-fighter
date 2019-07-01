@@ -20,6 +20,8 @@ Baker Street Fighter est une application web où deux personnages s'affrontent, 
     * Un uppercut faisant 30 points de dégat avec 50% d'efficacité
 * Le premier arrivant à 0 point de vie est déclaré perdant
 
-[Product Backlog](https://drive.google.com/file/d/1Wwa4Lc4f_Gt4hrtEYnLsYHaNOsU3T_lC/view?usp=sharing)
+[Product Backlog](https://drive.google.com/file/d/1Wwa4Lc4f_Gt4hrtEYnLsYHaNOsU3T_lC/view?usp=sharing)  
 
-[Sprint Backlog](https://trello.com/b/z8P7w9z6/bakerstreetfighter)
+[Sprint Backlog](https://trello.com/b/z8P7w9z6/bakerstreetfighter)  
+
+[Wireframe](https://transfernow.net/ddl/wireframe-baker-street-fighter)
