@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Retro computer";
-    src: url("/bakerStreetFighter/src/main/resources/static/CSS/retro_computer_personal_use.ttf");
+    src: url("../CSS/retro_computer_personal_use.ttf");
 }
 
 h1 {
