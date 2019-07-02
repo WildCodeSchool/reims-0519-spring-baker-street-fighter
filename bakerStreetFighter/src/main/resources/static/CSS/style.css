@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "Retro computer";
+    src: url("/bakerStreetFighter/src/main/resources/static/CSS/retro_computer_personal_use.ttf");
+}
+
+h1 {
+    margin-left: 20vw;
+    font-size:100pt;
+    font-family: 'IM Fell English SC', serif;
+    color:white;
+    text-shadow: 5px 5px black;
+}
+
+body {
+    font-family: "Retro computer", serif;
+}
+
+.dashed_border {
+    border: 4px dashed white;
+}
+
+.green_yellow {
+    color: greenyellow;
+}
+
+.rules_container {
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    background-image: url(../IMG/rules_bg.jpg);
+    background-size: cover;
+}
+
+.main_menu {
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 20vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main_menu ul {
+    list-style-type: none;
+}
+
+.main_menu ul li {
+    padding: 20px;
+    margin: 40px 0 40px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.main_menu ul li a {
+    text-decoration: none;
+}
+
+.main_menu ul li:hover {
+    background-color: white;
+}
+
+.main_menu ul li:hover a {
+    color: black;
+}
+
+.rules {
+    padding: 40px;
+    margin-left:20vw;
+    background-color: rgba(0, 0, 0, 0.8);
+}
