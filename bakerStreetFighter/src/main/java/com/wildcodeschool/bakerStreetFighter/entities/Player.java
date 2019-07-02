@@ -4,14 +4,16 @@ public class Player {
 
     private int id;
     private String name;
+    private int totalGamesPlayed;
     private int victory;
-    private int loose;
+    private int defeat;
 
-    public Player(int id, String name, int victory, int loose) {
+    public Player(int id, String name, int victory, int defeat) {
         this.id = id;
         this.name = name;
+        this.totalGamesPlayed = totalGamesPlayed;
         this.victory = victory;
-        this.loose = loose;
+        this.defeat = defeat;
     }
 
     public int getId() {
@@ -38,12 +40,20 @@ public class Player {
         this.victory = victory;
     }
 
-    public int getLoose() {
-        return loose;
+    public int getDefeat() {
+        return defeat;
     }
 
-    public void setLoose(int loose) {
-        this.loose = loose;
+    public void setDefeat(int defeat) {
+        this.defeat = defeat;
+    }
+
+    public int getTotalGamesPlayed() {
+        return totalGamesPlayed;
+    }
+
+    public void setTotalGamesPlayed(int totalGamesPlayed) {
+        this.totalGamesPlayed = totalGamesPlayed;
     }
 
 }

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BakerStreetFighterApplication<bakerStreetFighter>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.wildcodeschool.bakerStreetFighter.BakerStreetFighterApplication",
+            "projectName": "bakerStreetFighter",
+            "args": ""
+        }
+    ]
+}
