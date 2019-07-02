@@ -5,11 +5,13 @@ public class Fighter {
     private int id;
     private String name;
     private int life;
+    private int victory;
 
     public Fighter(int id, String name) {
         this.id = id;
         this.name = name;
         this.life = 100;
+        this.victory = 0;
     }
 
     public int getId() {
@@ -34,6 +36,14 @@ public class Fighter {
 
     public void setLife(int life) {
         this.life = life;
+    }
+
+    public int getVictory() {
+        return victory;
+    }
+
+    public void setVictory(int victory) {
+        this.victory = victory;
     }
 
 }
