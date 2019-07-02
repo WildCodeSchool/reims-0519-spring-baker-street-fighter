@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `baker_street_fighter`
+-- Table structure for table `fighter`
 --
 
-DROP TABLE IF EXISTS `baker_street_fighter`;
+DROP TABLE IF EXISTS `fighter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `baker_street_fighter` (
+CREATE TABLE `fighter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `victory_count` INT(11) NOT NULL,
@@ -33,12 +33,12 @@ CREATE TABLE `baker_street_fighter` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `baker_street_fighter`
+-- Dumping data for table `fighter`
 --
 
-LOCK TABLES `baker_street_fighter` WRITE;
-/*!40000 ALTER TABLE `baker_street_fighter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `baker_street_fighter` ENABLE KEYS */;
+LOCK TABLES `fighter` WRITE;
+/*!40000 ALTER TABLE `fighter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `fighter` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
