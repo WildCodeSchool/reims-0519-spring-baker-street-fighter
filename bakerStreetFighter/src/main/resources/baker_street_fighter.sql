@@ -25,7 +25,9 @@ DROP TABLE IF EXISTS `baker_street_fighter`;
 CREATE TABLE `baker_street_fighter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
-  `victory_count` varchar(20) NOT NULL,
+  `victory_count` INT(11) NOT NULL,
+  `defeat_count` INT(11) NOT NULL,
+  `total_games_played` INT(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

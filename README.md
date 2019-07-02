@@ -24,14 +24,13 @@ Baker Street Fighter est une application web où deux personnages s'affrontent, 
 Créer d'abord sur votre ordinateur local l'utilisateur suivant et accorder lui les droits via ces lignes de code.
 
 ```
+mysql -u root -D wild -p < baker_street_fighter.sql
+
 CREATE USER 'baker'@'localhost' IDENTIFIED BY 'Fighter51!';
 
-GRANT ALL ON baker_street_fighter.* TO 'nom_utilisateur'@'localhost';
+GRANT ALL ON baker_street_fighter.* TO 'baker'@'localhost';
 
 EXIT;
-
-mysql -u baker -D wild -p < baker_street_fighter.sql
-
 ```
 
 >_Pour la derniere de commande le prompt de la console doit être dans le dossier où se trouve le fichier .sql_
