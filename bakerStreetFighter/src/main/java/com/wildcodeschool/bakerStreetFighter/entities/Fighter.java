@@ -1,33 +1,12 @@
 package com.wildcodeschool.bakerStreetFighter.entities;
 
-public class Fighter {
+public class Fighter extends Player{
     
-    private int id;
-    private String name;
     private int life;
-    private int victory;
 
-    public Fighter(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public Fighter(int id, String name, int victory, int loose) {
+        super(id, name, victory, loose);
         this.life = 100;
-        this.victory = 0;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getLife() {
@@ -36,14 +15,6 @@ public class Fighter {
 
     public void setLife(int life) {
         this.life = life;
-    }
-
-    public int getVictory() {
-        return victory;
-    }
-
-    public void setVictory(int victory) {
-        this.victory = victory;
     }
 
 }
