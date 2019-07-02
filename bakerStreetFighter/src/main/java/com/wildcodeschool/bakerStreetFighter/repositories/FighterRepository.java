@@ -1,24 +1,32 @@
 package com.wildcodeschool.bakerStreetFighter.repositories;
 
+import com.wildcodeschool.bakerStreetFighter.entities.Fighter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 class FighterRepository {
 
-    public int getRiskRandomAttack() {
-        double probability = Math.random();
-        int randomRiskAttackDamage = 30;
-        if (probability > 0.5) {
-            return randomRiskAttackDamage;
-        } 
-        return 0;
+    private List<Fighter> fighters;
+
+    public FighterRepository() {
+        this.fighters = new ArrayList<Fighter>();
+        fighters.add(new Fighter(1, "Sherlock Holmes"));
+        fighters.add(new Fighter(2, "Professeur Moriarty"));
     }
 
-    public int getSafeRandomAttack() {
-        double probability = Math.random();
-        int randomSafeAttackDamage = 10;
-        
-        if (probability > 0.2) {
-            return randomSafeAttackDamage;
-        } 
-        return 0;
+    public List<Fighter> getFighters() {
+        return fighters;
     }
+
+    public Fighter getFighterById(int id) {
+        for(Fighter fighter : fighters) {
+            if(fighter.getId() == id) {
+                return fighter;
+            }
+        }
+        return null;
+    }
+
 
 }
