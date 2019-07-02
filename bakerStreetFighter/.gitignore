@@ -28,10 +28,10 @@ target/
 build/
 
 ### VS Code ###
-.vscode/
+*.vscode
 
 ### DS Store ###
-.DS_Store
+*.DS_Store
 
 # Compiled class file
 *.class
