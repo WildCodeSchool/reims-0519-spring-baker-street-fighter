@@ -14,6 +14,7 @@ h1 {
 body {
     font-family: "Retro computer", serif;
     overflow: hidden;
+    letter-spacing: 1px;
 }
 
 .dashed_border {
@@ -127,4 +128,59 @@ body {
 
 .fight_container .progress {
     margin:10px 0 10px 0;
+}
+
+/* -------- HOME PAGE -------- */
+
+.home_container {
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../IMG/home_bg.jpg);
+    background-size: cover;
+    color:white;
+}
+
+.home_container .home_title {
+    margin:70px auto auto auto;
+}
+
+.home_container p {
+    padding: 10px;
+}
+
+/* -------- HOME MENU -------- */
+
+.home_container .home_menu {
+    width: 30vw;
+    padding:30px;
+    margin-bottom: 40px;
+    text-align:center;
+}
+
+.home_container .home_menu ul {
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.home_container .home_menu ul li {
+    padding: 20px;
+    margin: 10px 0 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.home_container .home_menu ul li a {
+    text-decoration: none;
+    font-size:16pt;
+}
+
+.home_container .home_menu ul li:hover {
+    background-color: white;
+}
+
+.home_container .home_menu ul li:hover a {
+    color: black;
 }
