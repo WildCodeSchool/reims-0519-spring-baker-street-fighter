@@ -7,6 +7,10 @@ import java.util.List;
 
 class FighterRepository {
 
+    private final static String DB_URL = "jdbc:mysql://localhost:3306/wild_db_quest?serverTimezone=GMT";
+    private final static String DB_USER = "baker";
+    private final static String DB_PASSWORD = "Fighter51!";
+
     private List<Fighter> fighters;
 
     public FighterRepository() {
@@ -14,19 +18,5 @@ class FighterRepository {
         fighters.add(new Fighter(1, "Sherlock Holmes"));
         fighters.add(new Fighter(2, "Professeur Moriarty"));
     }
-
-    public List<Fighter> getFighters() {
-        return fighters;
-    }
-
-    public Fighter getFighterById(int id) {
-        for(Fighter fighter : fighters) {
-            if(fighter.getId() == id) {
-                return fighter;
-            }
-        }
-        return null;
-    }
-
 
 }
