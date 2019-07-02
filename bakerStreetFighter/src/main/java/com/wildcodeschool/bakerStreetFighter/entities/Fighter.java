@@ -1,6 +1,6 @@
 package com.wildcodeschool.bakerStreetFighter.entities;
 
-class Fighter {
+public class Fighter {
     
     private String name;
     private int life;
