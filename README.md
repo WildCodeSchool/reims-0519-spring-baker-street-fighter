@@ -35,6 +35,8 @@ CREATE DATABASE baker_street_fighter;
 
 EXIT;
 
+mysql -u root -p -D baker_street_fighter
+
 mysql -u root -D baker_street_fighter -p < baker_street_fighter.sql
 
 CREATE USER 'baker'@'localhost' IDENTIFIED BY 'Fighter51!';
