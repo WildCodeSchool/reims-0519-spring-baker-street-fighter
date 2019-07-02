@@ -184,3 +184,22 @@ body {
 .home_container .home_menu ul li:hover a {
     color: black;
 }
+
+/* -------- RANKING PAGE -------- */
+
+.ranking_container {
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    background-image: url(../IMG/ranking_bg.jpg);
+    background-size: cover;
+}
+
+.ranking_container .ranking {
+    padding: 40px;
+    margin-left:20vw;
+}
