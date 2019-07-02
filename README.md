@@ -20,6 +20,23 @@ Baker Street Fighter est une application web où deux personnages s'affrontent, 
     * Un uppercut faisant 30 points de dégat avec 50% d'efficacité
 * Le premier arrivant à 0 point de vie est déclaré perdant
 
+**Accès à la BDD du jeu**
+Créer d'abord sur votre ordinateur local l'utilisateur suivant et accorder lui les droits via ces lignes de code.
+
+```
+CREATE USER 'baker'@'localhost' IDENTIFIED BY 'Fighter51!';
+
+GRANT ALL ON baker_street_fighter.* TO 'nom_utilisateur'@'localhost';
+
+EXIT;
+
+mysql -u baker -D wild -p < baker_street_fighter.sql
+
+```
+
+>_Pour la derniere de commande le prompt de la console doit être dans le dossier où se trouve le fichier .sql_
+
+
 [Product Backlog](https://drive.google.com/file/d/1Wwa4Lc4f_Gt4hrtEYnLsYHaNOsU3T_lC/view?usp=sharing)  
 
 [Sprint Backlog](https://trello.com/b/z8P7w9z6/bakerstreetfighter)  
