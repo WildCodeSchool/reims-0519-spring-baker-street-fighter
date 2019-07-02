@@ -6,11 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class FighterRepository {
-
-    private final static String DB_URL = "jdbc:mysql://localhost:3306/wild_db_quest?serverTimezone=GMT";
-    private final static String DB_USER = "baker";
-    private final static String DB_PASSWORD = "Fighter51!";
-
+    
     private List<Fighter> fighters;
 
     public FighterRepository() {
