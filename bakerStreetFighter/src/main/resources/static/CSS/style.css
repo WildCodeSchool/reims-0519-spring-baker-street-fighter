@@ -98,11 +98,15 @@ body {
 }
 
 .description {
-    width:25vw;
+    width:40vw;
     height:328px;
     margin:auto 20px auto 20px;
     background-color: rgba(0, 0, 0, 0.8);
     display:flex;
     align-items:center;
     justify-content:center;
+}
+
+.card {
+    width:12vw;
 }
