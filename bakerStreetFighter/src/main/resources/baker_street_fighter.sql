@@ -19,6 +19,8 @@
 -- Table structure for table `baker_street_fighter`
 --
 
+CREATE DATABASE baker_street_fighter;
+
 DROP TABLE IF EXISTS `baker_street_fighter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
