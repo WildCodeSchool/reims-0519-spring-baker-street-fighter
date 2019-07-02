@@ -13,6 +13,7 @@ h1 {
 
 body {
     font-family: "Retro computer", serif;
+    overflow: hidden;
 }
 
 .dashed_border {
@@ -116,4 +117,14 @@ body {
 
 .fight_container .card {
     width:12vw;
+}
+
+.fight_container .card button {
+    width: 100%;
+    font-size:8pt;
+    margin: 5px 0 5px 0;
+}
+
+.fight_container .progress {
+    margin:10px 0 10px 0;
 }
