@@ -36,7 +36,6 @@
       </header>
 
       <section class="fight">
-
         <div class="card">
           <img src="../static/IMG/sherlock.jpg" class="card-img-top" alt="Sherlock Holmes">
           <div class="card-body">
@@ -60,8 +59,15 @@
               </div>
           </div>
         </div>
-      
       </section>
+
+      <form action="/fight" method="POST" class="dashed_border green_yellow bg_black_rgba">
+        <input type="radio" id="uppercut" name="attack" value="uppercut">
+        <label for="uppercut">Uppercut</label>  
+        <input type="radio" id="punch" name="attack" value="punch">
+        <label for="punch">Punch</label>
+        <input type="submit" value="Attack !">
+      </form>
 
     </div>
 
