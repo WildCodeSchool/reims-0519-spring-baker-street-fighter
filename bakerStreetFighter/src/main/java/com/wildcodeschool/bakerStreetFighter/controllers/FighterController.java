@@ -24,8 +24,15 @@ class FighterController {
     @GetMapping("/fight")
     public String fight(Model model, HttpSession session) {
         if(session.getAttribute("currentPlayer") == null) {
-            session.setAttribute("currentPlayer", 1);
+            
+            double probability = Math.random();
+            if(probability > 0.5){
+                session.setAttribute("currentPlayer", 1);
+            } else{
+                session.setAttribute("currentPlayer", 2);
+            }
         }
+
         model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
         return "fight";
     }
@@ -41,7 +48,11 @@ class FighterController {
         boolean fight = true;
 
         if(attack != null) {
+            if(attack.equals("punch")) {
 
+            } else {
+
+            }
         }
 
         // next player can play now
