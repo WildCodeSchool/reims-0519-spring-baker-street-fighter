@@ -206,3 +206,15 @@ body {
     padding: 40px;
     margin-left:20vw;
 }
+
+/* -------- FIGHT FORM -------- */
+
+.fight_container form {
+    padding:30px;
+    margin-top:30px;
+    margin-left:20vw;
+}
+
+.fight_container form input {
+    margin-left: 32px;
+}
