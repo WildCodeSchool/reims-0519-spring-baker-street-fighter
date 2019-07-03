@@ -27,7 +27,7 @@ public class RankingController<Ranking> {
     private final static String DB_PASSWORD = "Fighter51!";
 
     @GetMapping("/ranking")
-    public List<Ranking> getRankings(@RequestParam(defaultValue = "%") String country) {
+    public List<Ranking> getRankings(@RequestParam(defaultValue = "%") String details) {
         try(
             Connection connection = DriverManager.getConnection(
                 DB_URL, DB_USER, DB_PASSWORD
@@ -36,7 +36,7 @@ public class RankingController<Ranking> {
                 "SELECT * FROM fighter WHERE name LIKE ?"
             );
         ) {
-            statement.setString(1, country);
+            statement.setString(1, details);
     
             try(
                 ResultSet resulSet = statement.executeQuery();
