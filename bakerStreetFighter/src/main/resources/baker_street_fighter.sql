@@ -23,11 +23,11 @@ DROP TABLE IF EXISTS `fighter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fighter` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nickname` VARCHAR(11) NOT NULL,
+  `name` VARCHAR(20) NOT NULL,
   `victory_count` INT(11) NOT NULL,
   `defeat_count` INT(11) NOT NULL,
-  `total_games_played` INT(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
