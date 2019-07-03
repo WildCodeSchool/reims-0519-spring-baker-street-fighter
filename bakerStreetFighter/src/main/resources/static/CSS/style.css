@@ -120,10 +120,13 @@ body {
     width:12vw;
 }
 
-.fight_container .card button {
+.fight_container .card .custom-control {
     width: 100%;
     font-size:8pt;
-    margin: 5px 0 5px 0;
+}
+
+.fight_container .card input {
+    margin: 20px 0 0 0;
 }
 
 .fight_container .progress {
