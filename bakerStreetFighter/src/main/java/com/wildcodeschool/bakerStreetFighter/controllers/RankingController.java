@@ -26,7 +26,7 @@ public class RankingController<Ranking> {
     private final static String DB_USER = "baker";
     private final static String DB_PASSWORD = "Fighter51!";
 
-    @GetMapping("/ranking")
+    @GetMapping("/ranking2")
     public List<Ranking> getRankings(@RequestParam(defaultValue = "%") String details) {
         try(
             Connection connection = DriverManager.getConnection(
