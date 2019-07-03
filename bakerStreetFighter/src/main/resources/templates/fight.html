@@ -40,12 +40,28 @@
         <div class="card">
           <img src="../IMG/sherlock.jpg" class="card-img-top" alt="Sherlock Holmes">
           <div class="card-body">
-              <button type="button" class="btn btn-success">Coup de poing</button>
-              <button type="button" class="btn btn-danger">Uppercut</button>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+
+            <form action="/fight" method="POST">
+
+              <div class="custom-control custom-radio">
+                <input type="radio" id="punch" name="attack" class="custom-control-input">
+                <label class="custom-control-label" for="punch">Punch</label>
               </div>
-            </div>
+    
+              <div class="custom-control custom-radio">
+                <input type="radio" id="uppercut" name="attack" class="custom-control-input">
+                <label class="custom-control-label" for="uppercut">Uppercut</label>
+              </div>
+    
+              <input type="submit" value="Attack !">
+    
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+              </div>
+    
+            </form>
+
+          </div>
         </div>
 
         <div class="description green_yellow dashed_border bg_black_rgba">
@@ -55,11 +71,25 @@
         <div class="card">
           <img src="../IMG/moriarty_profil.jpg" class="card-img-top" alt="Professeur Moriarty">
           <div class="card-body">
-              <button type="button" class="btn btn-success">Coup de poing</button>
-              <button type="button" class="btn btn-danger">Uppercut</button>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            <form action="/fight" method="POST">
+
+              <div class="custom-control custom-radio">
+                <input type="radio" id="punch" name="attack" class="custom-control-input">
+                <label class="custom-control-label" for="punch">Punch</label>
               </div>
+    
+                <div class="custom-control custom-radio">
+                <input type="radio" id="uppercut" name="attack" class="custom-control-input">
+                <label class="custom-control-label" for="uppercut">Uppercut</label>
+              </div>
+    
+                <input type="submit" value="Attack !">
+    
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                </div>
+    
+            </form>
           </div>
         </div>
       
