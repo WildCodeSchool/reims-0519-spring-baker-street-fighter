@@ -22,7 +22,11 @@ class FighterController {
     }
 
     @GetMapping("/fight")
-    public String fight() {
+    public String fight(Model model, HttpSession session) {
+        if(session.getAttribute("currentPlayer") == null) {
+            session.setAttribute("currentPlayer", 1);
+        }
+        model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
         return "fight";
     }
 
@@ -34,19 +38,27 @@ class FighterController {
     @PostMapping("/fight")
     public String fight(Model model, HttpSession session, @RequestParam(required = false) String attack) {
 
+        boolean fight = true;
+
         if(attack != null) {
-            // TODO fight here
+
         }
 
-        if(!false) { 
+        // next player can play now
+        if(session.getAttribute("currentPlayer").equals(1)) {
+            session.setAttribute("currentPlayer", 2);
+        }
+        else {
+            session.setAttribute("currentPlayer", 1);
+        }
+
+        if(fight) {
             return "redirect:/fight";
         }
         else {
             return "redirect:/";
         }
-
-
-    }
+    }    
 
     
 }
