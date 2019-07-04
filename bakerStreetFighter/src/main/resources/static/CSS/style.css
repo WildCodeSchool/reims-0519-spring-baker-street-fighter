@@ -203,3 +203,32 @@ body {
     padding: 40px;
     margin-left:20vw;
 }
+
+/* -------- WINNER PAGE -------- */
+
+.win_container {
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    background-image: url(../IMG/winner_bg.jpg);
+    background-size: cover;
+}
+
+.h1win{
+    text-align:center;
+    z-index:20;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.3);
+    height:100vh;
+    width:100vw;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:0;
+}
