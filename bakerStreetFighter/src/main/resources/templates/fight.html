@@ -36,34 +36,41 @@
       </header>
 
       <section class="fight">
-
         <div class="card">
           <img src="../IMG/sherlock.jpg" class="card-img-top" alt="Sherlock Holmes">
           <div class="card-body">
-              <button type="button" class="btn btn-success">Coup de poing</button>
-              <button type="button" class="btn btn-danger">Uppercut</button>
+              <button type="button" class="btn btn-success">Sherlock</button>
               <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                <div class="progress-bar" role="progressbar"><span><strong th:text="${lifeP1}">100</strong> / 100</span></div>
               </div>
-            </div>
+          </div>
         </div>
 
         <div class="description green_yellow dashed_border bg_black_rgba">
-          <p>here actions of fight</p>
+          <p>Let the battle begin !</p>
+          <p><strong th:text="${currentPlayer}">player 1</strong> is playing now</p>
+          <p><strong th:text="${currentOppenent}">player 2</strong> played</p>
+
         </div>
 
         <div class="card">
           <img src="../IMG/moriarty_profil.jpg" class="card-img-top" alt="Professeur Moriarty">
           <div class="card-body">
-              <button type="button" class="btn btn-success">Coup de poing</button>
-              <button type="button" class="btn btn-danger">Uppercut</button>
+              <button type="button" class="btn btn-danger">Moriarty</button>
               <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                <div class="progress-bar" role="progressbar"><span><strong th:text="${lifeP2}">100</strong> / 100</span></div>
               </div>
           </div>
         </div>
-      
       </section>
+
+      <form action="/fight" method="POST" class="dashed_border green_yellow bg_black_rgba">
+        <input type="radio" id="uppercut" name="attack" value="uppercut">
+        <label for="uppercut">Uppercut</label>  
+        <input type="radio" id="punch" name="attack" value="punch">
+        <label for="punch">Punch</label>
+        <input type="submit" value="Attack !">
+      </form>
 
     </div>
 

@@ -7,11 +7,11 @@ public class Player {
     private int victory;
     private int loose;
 
-    public Player(int id, String name, int victory, int loose) {
+    public Player(int id, String name) {
         this.id = id;
         this.name = name;
-        this.victory = victory;
-        this.loose = loose;
+        this.victory = 0;
+        this.loose = 0;
     }
 
     public int getId() {
