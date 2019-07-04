@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class FighterController {
-    
-    private static FighterRepository fighterRepository = new FighterRepository();
 
+    private static FighterRepository fighterRepository = new FighterRepository();
+    
     @GetMapping("/")
     public String index() {
         return "index";
@@ -31,7 +31,7 @@ class FighterController {
     }
 
     @GetMapping("/fight")
-    public String fight(Model model, HttpSession session, int id) {
+    public String fight(Model model, HttpSession session) {
 
         if(session.getAttribute("currentPlayer") == null) {
             double probability = Math.random();
@@ -43,8 +43,9 @@ class FighterController {
             }
         }
 
-        model.addAttribute("fighter", fighterRepository.getFighterById(id));
-         model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
+        model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
+        model.addAttribute("lifeP1", fighterRepository.getFighterById(1).getLife());
+        model.addAttribute("lifeP2", fighterRepository.getFighterById(2).getLife());
 
         return "fight";
     }
@@ -54,26 +55,33 @@ class FighterController {
 
         boolean fight = true;
 
-        if(attack != null) {
-            if(attack.equals("punch")){
-                
-            } 
-            else if(attack.equals("uppercut")){
+        if(attack != null) { 
 
+            int currentOpponent = 2;
+            if(!session.getAttribute("currentPlayer").equals(1)) {
+                currentOpponent = 1;
             }
-        }
-        
-        // next player can play now
-        if(session.getAttribute("currentPlayer").equals(1)) {
-            session.setAttribute("currentPlayer", 2);
-        } 
-        else { 
-            session.setAttribute("currentPlayer", 1);
+            
+            int hit = FighterRepository.punch();
+            if(attack.equals("uppercut")) {
+                hit = FighterRepository.uppercut();
+            }
+
+            fighterRepository.getFighterById(currentOpponent).takeHit(hit);
+            System.out.println(fighterRepository.getFighterById(currentOpponent).getName()+" has "+fighterRepository.getFighterById(currentOpponent).getLife()+" life");
+
+            if(fighterRepository.getFighterById(currentOpponent).getLife() == 0) {
+                fight = false;
+            } else {
+                session.setAttribute("currentPlayer", currentOpponent);
+            }
         }
 
         if(fight) {
             return "redirect:/fight";
         } 
-        else { return "redirect:/"; }
+        else { 
+            return "redirect:/ranking";
+        }
     }    
 }
