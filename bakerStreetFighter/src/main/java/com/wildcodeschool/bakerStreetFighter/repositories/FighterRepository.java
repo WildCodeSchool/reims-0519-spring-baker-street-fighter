@@ -48,4 +48,8 @@ public class FighterRepository {
         }
     }
 
+    public List<Fighter> getRankingFighter() {
+        return null;
+    }
+
 }

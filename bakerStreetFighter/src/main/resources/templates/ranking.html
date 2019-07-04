@@ -36,7 +36,15 @@
       </header>
 
       <section class="ranking dashed_border green_yellow bg_black_rgba">
-        <p>HERE RANKING</p>
+          <ul>
+              <li th:each="rank : ${ranking}">
+                  <p th:text="${fighter.id}">ID Fighter</p>
+                  <p th:text="${fighter.name}">NAME Fighter</p>
+                  <p th:text="${fighter.victory_count}">VICTORY Fighter</p>
+                  <p th:text="${fighter.defeat_count}">DEFEAT Fighter</p>
+                  <p th:text="${fighter.total_games_playerd}">TOTAL Fighter</p>
+              </li>
+          </ul>  
       </section>
 
     </div>
