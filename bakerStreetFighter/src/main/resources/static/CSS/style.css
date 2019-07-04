@@ -114,6 +114,7 @@ body {
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-direction: column;
 }
 
 .fight_container .description strong {
@@ -131,10 +132,12 @@ body {
 
 .fight_container .progress {
     height:30px;
+    width:100%;
+    margin:10px 0 10px 0;
 }
 
-.fight_container .progress {
-    margin:10px 0 10px 0;
+.fight_container .progress-bar {
+    width:100%;
 }
 
 /* -------- HOME PAGE -------- */

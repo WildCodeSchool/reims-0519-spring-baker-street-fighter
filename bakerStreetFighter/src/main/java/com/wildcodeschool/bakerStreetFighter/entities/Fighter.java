@@ -4,8 +4,8 @@ public class Fighter extends Player{
     
     private int life;
 
-    public Fighter(int id, String name, int victory, int loose) {
-        super(id, name, victory, loose);
+    public Fighter(int id, String name) {
+        super(id, name);
         this.life = 100;
     }
 

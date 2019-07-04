@@ -5,18 +5,14 @@ import java.util.List;
 
 import com.wildcodeschool.bakerStreetFighter.entities.Fighter;
 
-class FighterRepository {
+public class FighterRepository {
     
     private List<Fighter> fighters;
 
     public FighterRepository() {
         this.fighters = new ArrayList<Fighter>();
-        fighters.add(new Fighter(1, "Sherlock Holmes", 0, 0));
-        fighters.add(new Fighter(2, "Professeur Moriarty", 0, 0));
-    }
-
-    public List<Fighter> getFighters() {
-        return fighters;
+        fighters.add(new Fighter(1, "Sherlock Holmes"));
+        fighters.add(new Fighter(2, "Professeur Moriarty"));
     }
 
     public Fighter getFighterById(int id) {
@@ -26,6 +22,26 @@ class FighterRepository {
             }
         }
         return null;
+    }
+
+    public int uppercut() {
+        double probability = Math.random();
+        int damage = 30;
+        if (probability > 0.5) {
+            return damage;
+        } else {
+            return 0;
+        }
+    }
+
+    public int punch() {
+        double probability = Math.random();
+        int damage = 10;
+        if (probability > 0.2) {
+            return damage;
+        } else {
+            return 0;
+        }
     }
 
 }

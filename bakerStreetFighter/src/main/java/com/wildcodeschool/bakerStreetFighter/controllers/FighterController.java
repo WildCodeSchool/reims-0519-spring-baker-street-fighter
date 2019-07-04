@@ -1,8 +1,8 @@
 package com.wildcodeschool.bakerStreetFighter.controllers;
 
-import com.wildcodeschool.bakerStreetFighter.FighterRepository;
-
 import javax.servlet.http.HttpSession;
+
+import com.wildcodeschool.bakerStreetFighter.repositories.FighterRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class FighterController {
-
+    
     private static FighterRepository fighterRepository = new FighterRepository();
 
     @GetMapping("/")
@@ -25,26 +25,28 @@ class FighterController {
         return "rules";
     }
 
-    @GetMapping("/fight")
-    public String fight(Model model, HttpSession session) {
-        if(session.getAttribute("currentPlayer") == null) {
+    @GetMapping("/ranking")
+    public String ranking() {
+        return "ranking";
+    }
 
+    @GetMapping("/fight")
+    public String fight(Model model, HttpSession session, int id) {
+
+        if(session.getAttribute("currentPlayer") == null) {
             double probability = Math.random();
-            if(probability > 0.5){
+            if(probability > 0.5) {
                 session.setAttribute("currentPlayer", 1);
-            } else{
+            } 
+            else {
                 session.setAttribute("currentPlayer", 2);
             }
         }
 
-        model.addAttribute("fighters", fighterRepository.getFighters());
-        model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
-        return "fight";
-    }
+        model.addAttribute("fighter", fighterRepository.getFighterById(id));
+         model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
 
-    @GetMapping("/ranking")
-    public String ranking() {
-        return "ranking";
+        return "fight";
     }
 
     @PostMapping("/fight")
@@ -53,23 +55,25 @@ class FighterController {
         boolean fight = true;
 
         if(attack != null) {
-            // next player can play now
-            if(session.getAttribute("currentPlayer").equals(1)) {
-                session.setAttribute("currentPlayer", 2);
+            if(attack.equals("punch")){
                 
+            } 
+            else if(attack.equals("uppercut")){
+
             }
-            else {
-                session.setAttribute("currentPlayer", 1);
-            }
+        }
+        
+        // next player can play now
+        if(session.getAttribute("currentPlayer").equals(1)) {
+            session.setAttribute("currentPlayer", 2);
+        } 
+        else { 
+            session.setAttribute("currentPlayer", 1);
         }
 
         if(fight) {
             return "redirect:/fight";
-        }
-        else {
-            return "redirect:/";
-        }
+        } 
+        else { return "redirect:/"; }
     }    
-
-    
 }
