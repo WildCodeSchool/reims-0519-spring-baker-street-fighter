@@ -24,7 +24,7 @@ public class FighterRepository {
         return null;
     }
 
-    public int uppercut() {
+    public static int uppercut() {
         double probability = Math.random();
         int damage = 30;
         if (probability > 0.5) {
@@ -34,7 +34,7 @@ public class FighterRepository {
         }
     }
 
-    public int punch() {
+    public static int punch() {
         double probability = Math.random();
         int damage = 10;
         if (probability > 0.2) {
