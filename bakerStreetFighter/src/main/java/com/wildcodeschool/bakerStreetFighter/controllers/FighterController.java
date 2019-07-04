@@ -68,7 +68,6 @@ class FighterController {
             }
 
             fighterRepository.getFighterById(currentOpponent).takeHit(hit);
-            System.out.println(fighterRepository.getFighterById(currentOpponent).getName()+" has "+fighterRepository.getFighterById(currentOpponent).getLife()+" life");
 
             if(fighterRepository.getFighterById(currentOpponent).getLife() == 0) {
                 fight = false;
