@@ -30,6 +30,11 @@ class FighterController {
         return "ranking";
     }
 
+    @GetMapping("/win")
+    public String winner() {
+        return "winner";
+    }
+
     @GetMapping("/fight")
     public String fight(Model model, HttpSession session) {
 
@@ -81,7 +86,7 @@ class FighterController {
             return "redirect:/fight";
         } 
         else { 
-            return "redirect:/ranking";
+            return "redirect:/win";
         }
     }    
 }
