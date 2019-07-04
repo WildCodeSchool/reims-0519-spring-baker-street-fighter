@@ -17,4 +17,8 @@ public class Fighter extends Player{
         this.life = life;
     }
 
+    public void takeHit(int hit) {
+        this.setLife(Math.max(this.getLife() - hit, 0));
+    }
+
 }
