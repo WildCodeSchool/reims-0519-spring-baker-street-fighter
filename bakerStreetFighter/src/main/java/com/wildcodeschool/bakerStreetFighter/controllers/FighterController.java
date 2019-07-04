@@ -44,6 +44,7 @@ class FighterController {
         }
 
         model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
+        model.addAttribute("currentOppenent", session.getAttribute("currentPlayer").equals(2) ? "Sherlock" : "Moriarty");
         model.addAttribute("lifeP1", fighterRepository.getFighterById(1).getLife());
         model.addAttribute("lifeP2", fighterRepository.getFighterById(2).getLife());
 
