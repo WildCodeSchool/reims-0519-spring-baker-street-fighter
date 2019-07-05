@@ -23,8 +23,8 @@ public class FighterRepository {
 
     public FighterRepository() {
         this.fighters = new ArrayList<Fighter>();
-        fighters.add(new Fighter(1, "Sherlock Holmes", 0, 0, 0));
-        fighters.add(new Fighter(2, "Professeur Moriarty", 0, 0, 0));
+        fighters.add(new Fighter(1, "Sherlock Holmes", 0, 0));
+        fighters.add(new Fighter(2, "Professeur Moriarty", 0, 0));
     }
 
     public Fighter getFighterById(int id) {
@@ -73,11 +73,10 @@ public class FighterRepository {
                 while(resulSet.next()){
                     int id = resulSet.getInt("id");
                     String name = resulSet.getString("name");
-                    int victory_count = resulSet.getInt("victory_count");
-                    int defeat_count = resulSet.getInt("defeat_count");
-                    int total_games_played = resulSet.getInt("total_games_played");
+                    int victoryCount = resulSet.getInt("victory_count");
+                    int defeatCount = resulSet.getInt("defeat_count");
 
-                    fighters.add(new Fighter(id, name, victory_count, defeat_count, total_games_played));
+                    fighters.add(new Fighter(id, name, victoryCount, defeatCount));
                 }
 
                 return fighters;
@@ -93,9 +92,8 @@ public class FighterRepository {
     public static int updateScore(
         int id,
         String name,
-        int victory_count,
-        int defeat_count, 
-        int total_games_played
+        int victoryCount,
+        int defeatCount
 
     ) {
         try(
@@ -103,12 +101,11 @@ public class FighterRepository {
                 DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                "UPDATE fighter SET victory_count=?, defeat_count=?, total_games_played=? WHERE id=?"
+                "UPDATE fighter SET victoryCount=?, defeatCount=? WHERE id=?"
             );
         ) {
-            statement.setInt(1, victory_count);
-            statement.setInt(2, defeat_count);
-            statement.setInt(3, total_games_played);
+            statement.setInt(1, victoryCount);
+            statement.setInt(2, defeatCount);
     
             return statement.executeUpdate();
         }
