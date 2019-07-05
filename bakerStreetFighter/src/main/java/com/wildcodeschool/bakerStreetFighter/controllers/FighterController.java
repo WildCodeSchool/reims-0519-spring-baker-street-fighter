@@ -31,7 +31,8 @@ class FighterController {
     }
 
     @GetMapping("/win")
-    public String winner() {
+    public String winner(Model model, HttpSession session) {
+        model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
         return "winner";
     }
 
