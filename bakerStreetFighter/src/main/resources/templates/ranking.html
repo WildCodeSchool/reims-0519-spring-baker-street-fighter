@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css" th:href="@{css/style.css}">
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 
     <title>Ranking</title>
@@ -35,21 +35,21 @@
         </nav>
       </header>
 
-      <section class="ranking dashed_border green_yellow bg_black_rgba">
-          <table>
+      <section class="ranking green_yellow">
+          <table class="bg_black_rgba">
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Victories</th>
-              <th>Losses</th>
-              <th>total games played</th>
+              <th class="white_font">ID</th>
+              <th class="white_font">Name</th>
+              <th class="white_font">Victories</th>
+              <th class="white_font">Losses</th>
+              <th class="white_font">total games played</th>
             </tr>
             <tr th:each="fighter : ${fighters}">
-              <td><p th:text="${fighter.id}">ID Fighter</p></td>
-              <td><p th:text="${fighter.name}">NAME Fighter</p></td>
-              <td><p th:text="${fighter.victory_count}">VICTORY Fighter</p></td>
-              <td><p th:text="${fighter.defeat_count}">DEFEAT Fighter</p></td>
-              <td><p th:text="${fighter.total_games_played}">TOTAL Fighter</p></td>
+              <td><span th:text="${fighter.id}">ID Fighter</span></td>
+              <td><span th:text="${fighter.name}">NAME Fighter</span></td>
+              <td><span th:text="${fighter.victory_count}">VICTORY Fighter</span></td>
+              <td><span th:text="${fighter.defeat_count}">DEFEAT Fighter</span></td>
+              <td><span th:text="${fighter.total_games_played}">TOTAL Fighter</span></td>
             </tr>
           </table>
       </section>

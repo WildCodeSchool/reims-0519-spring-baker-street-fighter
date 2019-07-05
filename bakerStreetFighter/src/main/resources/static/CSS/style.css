@@ -211,17 +211,18 @@ body {
 }
 
 .ranking_container .ranking {
-    padding: 40px;
     margin-left:20vw;
+    text-align:center;
+    font-size:15pt;
 }
 
-.ranking_container .ranking table th {
-    color:white;
-}
-
-.ranking_container .ranking table th, .ranking_container .ranking table td {
+table th, table td {
     border:1px dashed white;
-    padding:10px;
+    padding:20px;
+}
+
+table tr:first-child {
+    color:white;
 }
 
 /* -------- WINNER PAGE -------- */
