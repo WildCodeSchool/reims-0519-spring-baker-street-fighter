@@ -36,15 +36,22 @@
       </header>
 
       <section class="ranking dashed_border green_yellow bg_black_rgba">
-          <ul>
-              <li th:each="rank : ${ranking}">
-                  <p th:text="${fighter.id}">ID Fighter</p>
-                  <p th:text="${fighter.name}">NAME Fighter</p>
-                  <p th:text="${fighter.victory_count}">VICTORY Fighter</p>
-                  <p th:text="${fighter.defeat_count}">DEFEAT Fighter</p>
-                  <p th:text="${fighter.total_games_playerd}">TOTAL Fighter</p>
-              </li>
-          </ul>  
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Victories</th>
+              <th>Losses</th>
+              <th>total games played</th>
+            </tr>
+            <tr th:each="fighter : ${fighters}">
+              <td><p th:text="${fighter.id}">ID Fighter</p></td>
+              <td><p th:text="${fighter.name}">NAME Fighter</p></td>
+              <td><p th:text="${fighter.victory_count}">VICTORY Fighter</p></td>
+              <td><p th:text="${fighter.defeat_count}">DEFEAT Fighter</p></td>
+              <td><p th:text="${fighter.total_games_played}">TOTAL Fighter</p></td>
+            </tr>
+          </table>
       </section>
 
     </div>

@@ -212,6 +212,16 @@ body {
 .ranking_container .ranking {
     padding: 40px;
     margin-left:20vw;
+    text-align:center;
+}
+
+.ranking_container .ranking table th {
+    color:white;
+}
+
+.ranking_container .ranking table th, .ranking_container .ranking table td {
+    border:1px dashed white;
+    padding:10px;
 }
 
 /* -------- WINNER PAGE -------- */
