@@ -90,4 +90,33 @@ public class FighterRepository {
         }
     }
 
+    public static int updateScore(
+        int id,
+        String name,
+        int victory_count,
+        int defeat_count, 
+        int total_games_played
+
+    ) {
+        try(
+            Connection connection = DriverManager.getConnection(
+                DB_URL, DB_USER, DB_PASSWORD
+            );
+            PreparedStatement statement = connection.prepareStatement(
+                "UPDATE fighter SET victory_count=?, defeat_count=?, total_games_played=? WHERE id=?"
+            );
+        ) {
+            statement.setInt(1, victory_count);
+            statement.setInt(2, defeat_count);
+            statement.setInt(3, total_games_played);
+    
+            return statement.executeUpdate();
+        }
+        catch (SQLException e) {
+            throw new ResponseStatusException(
+                HttpStatus.INTERNAL_SERVER_ERROR, "", e
+            );
+        }
+    }
+
 }
