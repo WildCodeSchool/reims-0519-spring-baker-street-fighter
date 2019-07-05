@@ -207,11 +207,22 @@ body {
     text-align: justify;
     background-image: url(../IMG/ranking_bg.jpg);
     background-size: cover;
+    text-align:center;
 }
 
 .ranking_container .ranking {
-    padding: 40px;
     margin-left:20vw;
+    text-align:center;
+    font-size:15pt;
+}
+
+table th, table td {
+    border:1px dashed white;
+    padding:20px;
+}
+
+table tr:first-child {
+    color:white;
 }
 
 /* -------- WINNER PAGE -------- */

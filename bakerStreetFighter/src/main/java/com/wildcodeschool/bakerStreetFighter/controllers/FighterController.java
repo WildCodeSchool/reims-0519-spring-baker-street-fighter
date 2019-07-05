@@ -26,7 +26,8 @@ class FighterController {
     }
 
     @GetMapping("/ranking")
-    public String ranking() {
+    public String ranking(Model model) {
+        model.addAttribute("fighters", fighterRepository.getRankingFighter());
         return "ranking";
     }
 

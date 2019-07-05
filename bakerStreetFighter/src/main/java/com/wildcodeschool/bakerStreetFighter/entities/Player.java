@@ -4,14 +4,14 @@ public class Player {
 
     private int id;
     private String name;
-    private int victory;
-    private int loose;
+    private int victoryCount;
+    private int defeatCount;
 
-    public Player(int id, String name) {
+    public Player(int id, String name, int victoryCount, int defeatCount) {
         this.id = id;
         this.name = name;
-        this.victory = 0;
-        this.loose = 0;
+        this.victoryCount = victoryCount;
+        this.defeatCount = defeatCount;
     }
 
     public int getId() {
@@ -30,20 +30,20 @@ public class Player {
         this.name = name;
     }
 
-    public int getVictory() {
-        return victory;
+    public int getVictoryCount() {
+        return victoryCount;
     }
 
-    public void setVictory(int victory) {
-        this.victory = victory;
+    public void setVictoryCount(int victoryCount) {
+        this.victoryCount = victoryCount;
     }
 
-    public int getLoose() {
-        return loose;
+    public int getDefeatCount() {
+        return defeatCount;
     }
 
-    public void setLoose(int loose) {
-        this.loose = loose;
+    public void setDefeatCount(int defeatCount) {
+        this.defeatCount = defeatCount;
     }
 
 }
