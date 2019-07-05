@@ -4,16 +4,14 @@ public class Player {
 
     private int id;
     private String name;
-    private int victory_count;
-    private int defeat_count;
-    private int total_games_played;
+    private int victoryCount;
+    private int defeatCount;
 
-    public Player(int id, String name, int victory_count, int defeat_count, int total_games_played) {
+    public Player(int id, String name, int victoryCount, int defeatCount) {
         this.id = id;
         this.name = name;
-        this.victory_count = victory_count;
-        this.defeat_count = defeat_count;
-        this.total_games_played = total_games_played;
+        this.victoryCount = victoryCount;
+        this.defeatCount = defeatCount;
     }
 
     public int getId() {
@@ -32,28 +30,20 @@ public class Player {
         this.name = name;
     }
 
-    public int getVictory_count() {
-        return victory_count;
+    public int getVictoryCount() {
+        return victoryCount;
     }
 
-    public void setVictory_count(int victory_count) {
-        this.victory_count = victory_count;
+    public void setVictoryCount(int victoryCount) {
+        this.victoryCount = victoryCount;
     }
 
-    public int getDefeat_count() {
-        return defeat_count;
+    public int getDefeatCount() {
+        return defeatCount;
     }
 
-    public void setDefeat_count(int defeat_count) {
-        this.defeat_count = defeat_count;
-    }
-
-    public int getTotal_games_played() {
-        return total_games_played;
-    }
-
-    public void setTotal_games_played(int total_games_played) {
-        this.total_games_played = total_games_played;
+    public void setDefeatCount(int defeatCount) {
+        this.defeatCount = defeatCount;
     }
 
 }
