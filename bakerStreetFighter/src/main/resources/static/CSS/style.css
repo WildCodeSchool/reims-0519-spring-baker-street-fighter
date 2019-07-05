@@ -207,12 +207,12 @@ body {
     text-align: justify;
     background-image: url(../IMG/ranking_bg.jpg);
     background-size: cover;
+    text-align:center;
 }
 
 .ranking_container .ranking {
     padding: 40px;
     margin-left:20vw;
-    text-align:center;
 }
 
 .ranking_container .ranking table th {
