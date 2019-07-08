@@ -187,6 +187,16 @@ body {
     font-size:16pt;
 }
 
+.home_container .home_menu ul li:nth-child(2) a {
+    animation: colorblink 0.5s infinite;
+    font-size: 20pt;
+}
+
+@keyframes colorblink { 
+  0% { }
+  50% { color:red; } 
+}
+
 .home_container .home_menu ul li:hover {
     background-color: white;
 }
