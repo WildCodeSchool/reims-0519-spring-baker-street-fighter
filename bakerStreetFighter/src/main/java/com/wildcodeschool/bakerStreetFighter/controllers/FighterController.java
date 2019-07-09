@@ -55,6 +55,7 @@ class FighterController {
 
         fighterRepository.getFighterById(1).setLife(100);
         fighterRepository.getFighterById(2).setLife(100);
+        session.setAttribute("lastAttackFailed", null);
 
         return "winner";
     }
