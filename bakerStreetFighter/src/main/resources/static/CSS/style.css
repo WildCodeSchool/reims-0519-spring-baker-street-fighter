@@ -50,10 +50,14 @@ body {
 .main_menu ul li {
     padding: 20px;
     margin: 40px 0 40px 0;
+    cursor: pointer;
 }
 
 .main_menu ul li a {
     text-decoration: none;
+    height:100%;
+    width:100%;
+    display:block;
 }
 
 .main_menu ul li:nth-child(2) a {
@@ -185,11 +189,15 @@ body {
     padding: 20px;
     margin: 10px 0 10px 0;
     background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
 }
 
 .home_container .home_menu ul li a {
     text-decoration: none;
     font-size:16pt;
+    display:block;
+    height:100%;
+    width:100%;
 }
 
 .home_container .home_menu ul li:nth-child(2) a {
