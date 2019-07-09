@@ -101,11 +101,12 @@ public class FighterRepository {
                 DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                "UPDATE fighter SET victoryCount=?, defeatCount=? WHERE id=?"
+                "UPDATE fighter SET victory_count=?, defeat_count=? WHERE id=?"
             );
         ) {
             statement.setInt(1, victoryCount);
             statement.setInt(2, defeatCount);
+            statement.setInt(3, id);
     
             return statement.executeUpdate();
         }

@@ -2,6 +2,7 @@ package com.wildcodeschool.bakerStreetFighter.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import com.wildcodeschool.bakerStreetFighter.entities.Fighter;
 import com.wildcodeschool.bakerStreetFighter.repositories.FighterRepository;
 
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,28 @@ class FighterController {
 
     @GetMapping("/win")
     public String winner(Model model, HttpSession session) {
-        model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
+        Fighter sherlock = fighterRepository.getRankingFighter().get(0);
+        Fighter moriarty = fighterRepository.getRankingFighter().get(1);
+
+        if(session.getAttribute("currentPlayer").equals(sherlock.getId())) {
+            sherlock.setVictoryCount(sherlock.getVictoryCount()+1);
+            moriarty.setDefeatCount(moriarty.getDefeatCount()+1);
+
+            model.addAttribute("currentPlayer", sherlock.getName());
+        }
+        else {
+            sherlock.setDefeatCount(sherlock.getDefeatCount()+1);
+            moriarty.setVictoryCount(moriarty.getVictoryCount()+1);
+
+            model.addAttribute("currentPlayer", moriarty.getName());
+        }
+
+        FighterRepository.updateScore(sherlock.getId(), sherlock.getName(), sherlock.getVictoryCount(), sherlock.getDefeatCount());
+        FighterRepository.updateScore(moriarty.getId(), moriarty.getName(), moriarty.getVictoryCount(), moriarty.getDefeatCount());
+
+        fighterRepository.getFighterById(1).setLife(100);
+        fighterRepository.getFighterById(2).setLife(100);
+
         return "winner";
     }
 
@@ -50,8 +72,16 @@ class FighterController {
             }
         }
 
+        model.addAttribute("message", "Let the battle begin");
+        if(session.getAttribute("lastAttackFailed") != null) {
+            if(session.getAttribute("lastAttackFailed").equals(false)) {
+                model.addAttribute("message", "The attack worked");
+            }
+            else {
+                model.addAttribute("message", "The attack failed");
+            }
+        }
         model.addAttribute("currentPlayer", session.getAttribute("currentPlayer").equals(1) ? "Sherlock" : "Moriarty");
-        model.addAttribute("currentOppenent", session.getAttribute("currentPlayer").equals(2) ? "Sherlock" : "Moriarty");
         model.addAttribute("lifeP1", fighterRepository.getFighterById(1).getLife());
         model.addAttribute("lifeP2", fighterRepository.getFighterById(2).getLife());
 
@@ -59,7 +89,7 @@ class FighterController {
     }
 
     @PostMapping("/fight")
-    public String fight(Model model, HttpSession session, @RequestParam(required = false) String attack) {
+    public String fight(HttpSession session, @RequestParam(required = false) String attack) {
 
         boolean fight = true;
 
@@ -70,12 +100,20 @@ class FighterController {
                 currentOpponent = 1;
             }
             
-            int hit = FighterRepository.punch();
+            int hit = 0;
             if(attack.equals("uppercut")) {
                 hit = FighterRepository.uppercut();
             }
+            else {
+                hit = FighterRepository.punch();
+            }
 
-            fighterRepository.getFighterById(currentOpponent).takeHit(hit);
+            if(hit > 0) {
+                session.setAttribute("lastAttackFailed", false);
+                fighterRepository.getFighterById(currentOpponent).takeHit(hit);
+            } else {
+                session.setAttribute("lastAttackFailed", true);
+            }
 
             if(fighterRepository.getFighterById(currentOpponent).getLife() == 0) {
                 fight = false;
@@ -90,5 +128,5 @@ class FighterController {
         else { 
             return "redirect:/win";
         }
-    }    
+    }
 }
