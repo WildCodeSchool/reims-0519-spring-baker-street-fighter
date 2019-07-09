@@ -53,4 +53,4 @@ EXIT;
 
 [Sprint Backlog](https://trello.com/b/z8P7w9z6/bakerstreetfighter)  
 
-[Ressources](https://drive.google.com/drive/folders/1yDoGoFSG3LqBV74rEwcWsIPGDepzcghW)
+[Ressources](https://drive.google.com/drive/folders/1yDoGoFSG3LqBV74rEwcWsIPGDepzcghW?usp=sharing)
