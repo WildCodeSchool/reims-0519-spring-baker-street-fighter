@@ -56,6 +56,11 @@ body {
     text-decoration: none;
 }
 
+.main_menu ul li:nth-child(2) a {
+    animation: colorblink 0.5s infinite;
+    font-size: 20pt;
+}
+
 .main_menu ul li:hover {
     background-color: white;
 }
