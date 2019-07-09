@@ -53,4 +53,4 @@ EXIT;
 
 [Sprint Backlog](https://trello.com/b/z8P7w9z6/bakerstreetfighter)  
 
-[Wireframe](https://transfernow.net/ddl/wireframe-baker-street-fighter)
+[Ressources](https://drive.google.com/drive/folders/1yDoGoFSG3LqBV74rEwcWsIPGDepzcghW)
