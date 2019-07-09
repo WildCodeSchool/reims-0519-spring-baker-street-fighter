@@ -36,28 +36,32 @@ body {
     left:0;
     top:0;
     height: 100vh;
-    width: 20vw;
+    width: 30vw;
     display:flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
 }
 
 .main_menu ul {
     list-style-type: none;
+    width:70%;
 }
 
 .main_menu ul li {
-    padding: 20px;
     margin: 40px 0 40px 0;
     cursor: pointer;
+    height:100px;
 }
 
 .main_menu ul li a {
     text-decoration: none;
     height:100%;
-    width:100%;
-    display:block;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:16pt;
 }
 
 .main_menu ul li:nth-child(2) a {
@@ -90,6 +94,7 @@ body {
 .rules_container .rules {
     padding: 40px;
     margin-left:20vw;
+    width:60%;
 }
 
 .rules_container .rules span {
@@ -186,18 +191,20 @@ body {
 }
 
 .home_container .home_menu ul li {
-    padding: 20px;
     margin: 10px 0 10px 0;
     background-color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
+    height:100px;
 }
 
 .home_container .home_menu ul li a {
     text-decoration: none;
     font-size:16pt;
-    display:block;
     height:100%;
-    width:100%;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .home_container .home_menu ul li:nth-child(2) a {
